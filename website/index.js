@@ -4,10 +4,9 @@
 
 // Recommended: Ask for the city name and then the rest of the code
 
-
 let question = prompt ("Vilken stad?");
 
-const elementCities = document.querySelector(`#cities`);
-elementCities.innerHTML = `<h3>${question} (Frankrike) </h3>`;
-elementCities.style.justifyContent ="center";
-elementCities.style.fontSize = "25px";
+const elementFirstH2 = document.querySelector(`h2`);
+elementFirstH2.innerHTML = `<h2>${question} </h2>`;
+
+

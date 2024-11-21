@@ -4,9 +4,11 @@
 
 // Recommended: Ask for the city name and then the rest of the code
 
+const elementFirstH2 = document.querySelector("h2");
+
 let question = prompt ("Vilken stad?");
-
-const elementFirstH2 = document.querySelector(`h2`);
-elementFirstH2.innerHTML = `<h2>${question} </h2>`;
-
-
+if (question == cities.name) {
+    elementFirstH2.textContent = `${cities.name} (${cities.country})`
+} else
+    elementFirstH2.textContent = `${question} finns inte i databasen`;
+    document.title = "Not found";

@@ -5,15 +5,30 @@
 // Recommended: Ask for the city name and then the rest of the code
 
 const main = document.querySelector("main");
-main.className = main;
 
 const elementFirstH2 = document.querySelector("h2");
 
+const h3 = document.querySelector("h3");
+
 let question = prompt ("Vilken stad?");
-for (let i = 0; i<cities.length; i++)
-if (question == cities.name) {
-    elementFirstH2.textContent = `${foundCities.name} (${foundCities.country})`
-    document.title = `${question}`
-} else
-    elementFirstH2.textContent = `${question} finns inte i databasen`;
-    document.title = "Not found";
+
+function findCity(city) {
+
+        for (let i = 0; i < cities.length; i++) {
+            if (city === cities[i].name) {
+                elementFirstH2.textContent = `${cities[i].name} (${cities[i].country})`
+                document.title = `${question}`
+
+                return;
+            }
+        }
+            elementFirstH2.textContent = `${question} finns inte i databasen`
+            document.title = "Not Found"
+}
+
+    findCity(question)
+
+    for (let i = 0; i < cities.length; i++) {
+        document.getElementById("cities").innerHTML += `<div class="cityBox">${cities[i].name}</div>`
+    }
+
